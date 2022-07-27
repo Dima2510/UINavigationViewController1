@@ -13,10 +13,34 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        if let windowScene = scene as? UIWindowScene {
+
+               let window = UIWindow(windowScene: windowScene)
+               let navController = UINavigationController()
+               let viewController = ViewController()
+
+               navController.viewControllers = [viewController]
+               window.rootViewController = navController
+               self.window = window
+               window.makeKeyAndVisible()
+            
+           }
+    }
+        
+        
+        
+        //        //создаем фон и его его границы
+//        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+//        //создаем нав.контролер
+//        let navController = UINavigationController()
+//
+//        window?.windowScene = windowScene
+//
+//        window?.rootViewController = navController
+//        //backgroundcolor of view
+//        window?.backgroundColor = .systemGreen
+//        //presentation of our view
+//        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -48,5 +72,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-}
+
 

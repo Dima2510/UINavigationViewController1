@@ -9,28 +9,11 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    //cоздание фона
-    var window: UIWindow?
-    
-    //создания навигейшен контролерра
-    var navController = UINavigationController()
+
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
-        //обращаемся к папке вьюконтролера
-        let viewController = ViewController()
-        //присвоение
-        navController = UINavigationController(rootViewController: viewController)
-        //присваиваем экрану контролера размеры
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navController
-        //color of window
-        window?.backgroundColor = UIColor.white
-        //present window
-        window?.makeKeyAndVisible()
-        
+        // Override point for customization after application launch.
         return true
     }
 
